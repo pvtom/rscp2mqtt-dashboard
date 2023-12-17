@@ -11,9 +11,9 @@
         "id": "91f3de9c65805d3e",
         "type": "mqtt-broker",
         "name": "broker",
-        "broker": "localhost",
-        "port": "1883",
-        "clientid": "",
+        "broker": "MQTT_BROKER",
+        "port": "MQTT_PORT",
+        "clientid": "MQTT_CLIENT_ID",
         "autoConnect": false,
         "usetls": false,
         "protocolVersion": "4",
@@ -35,6 +35,7 @@
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
+        MQTT_CREDENTIALS
     },
     {
         "id": "b28b0261bc6a5810",
@@ -262,197 +263,197 @@
         "rules": [
             {
                 "t": "eq",
-                "v": "e3dc/autarky",
+                "v": "TOPIC_PREFIX/autarky",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/consumed",
+                "v": "TOPIC_PREFIX/consumed",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/battery/soc",
+                "v": "TOPIC_PREFIX/battery/soc",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/solar/power",
+                "v": "TOPIC_PREFIX/solar/power",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/home/power",
+                "v": "TOPIC_PREFIX/home/power",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/grid/power",
+                "v": "TOPIC_PREFIX/grid/power",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/battery/power",
+                "v": "TOPIC_PREFIX/battery/power",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/pm/power/L1",
+                "v": "TOPIC_PREFIX/pm/power/L1",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/pm/power/L2",
+                "v": "TOPIC_PREFIX/pm/power/L2",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/pm/power/L3",
+                "v": "TOPIC_PREFIX/pm/power/L3",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/pvi/power/string_1",
+                "v": "TOPIC_PREFIX/pvi/power/string_1",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/pvi/power/string_2",
+                "v": "TOPIC_PREFIX/pvi/power/string_2",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/reserve/energy",
+                "v": "TOPIC_PREFIX/reserve/energy",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/ems/weather_regulation",
+                "v": "TOPIC_PREFIX/ems/weather_regulation",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/ems/power_limits",
+                "v": "TOPIC_PREFIX/ems/power_limits",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/ems/max_charge/power",
+                "v": "TOPIC_PREFIX/ems/max_charge/power",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/ems/max_discharge/power",
+                "v": "TOPIC_PREFIX/ems/max_discharge/power",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/year/solar/energy",
+                "v": "TOPIC_PREFIX/year/solar/energy",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/year/home/energy",
+                "v": "TOPIC_PREFIX/year/home/energy",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/year/grid/energy/in",
+                "v": "TOPIC_PREFIX/year/grid/energy/in",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/year/grid/energy/out",
+                "v": "TOPIC_PREFIX/year/grid/energy/out",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/year/autarky",
+                "v": "TOPIC_PREFIX/year/autarky",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/year/consumed",
+                "v": "TOPIC_PREFIX/year/consumed",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/solar/energy",
+                "v": "TOPIC_PREFIX/solar/energy",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/home/energy",
+                "v": "TOPIC_PREFIX/home/energy",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/grid/energy/in",
+                "v": "TOPIC_PREFIX/grid/energy/in",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/grid/energy/out",
+                "v": "TOPIC_PREFIX/grid/energy/out",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/grid_in_limit",
+                "v": "TOPIC_PREFIX/grid_in_limit",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/battery/cycles",
+                "v": "TOPIC_PREFIX/battery/cycles",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/battery/energy/charge",
+                "v": "TOPIC_PREFIX/battery/energy/charge",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/battery/energy/discharge",
+                "v": "TOPIC_PREFIX/battery/energy/discharge",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/battery/temperature/max",
+                "v": "TOPIC_PREFIX/battery/temperature/max",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/pvi/temperature/4",
+                "v": "TOPIC_PREFIX/pvi/temperature/4",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/pvi/frequency",
+                "v": "TOPIC_PREFIX/pvi/frequency",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/limit/charge/soc",
+                "v": "TOPIC_PREFIX/limit/charge/soc",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/limit/discharge/soc",
+                "v": "TOPIC_PREFIX/limit/discharge/soc",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/limit/discharge/by_home_power",
+                "v": "TOPIC_PREFIX/limit/discharge/by_home_power",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/limit/charge/durable",
+                "v": "TOPIC_PREFIX/limit/charge/durable",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "e3dc/limit/discharge/durable",
+                "v": "TOPIC_PREFIX/limit/discharge/durable",
                 "vt": "str"
             }
         ],
@@ -599,8 +600,8 @@
         "title": "L1",
         "label": "Watt",
         "format": "{{value}}",
-        "min": "-5000",
-        "max": "5000",
+        "min": "-MAX_PHASE_POWER",
+        "max": "MAX_PHASE_POWER",
         "colors": [
             "#8df900",
             "#ff9300",
@@ -628,7 +629,7 @@
         "label": "Watt",
         "format": "{{value}}",
         "min": 0,
-        "max": "15000",
+        "max": "MAX_SOLAR_POWER",
         "colors": [
             "#fefc78",
             "#ff9300",
@@ -656,7 +657,7 @@
         "label": "Watt",
         "format": "{{value}}",
         "min": 0,
-        "max": "15000",
+        "max": "MAX_HOME_POWER",
         "colors": [
             "#0096ff",
             "#ff9300",
@@ -683,8 +684,8 @@
         "title": "Grid Power",
         "label": "Watt",
         "format": "{{value}}",
-        "min": "-15000",
-        "max": "15000",
+        "min": "-MAX_GRID_POWER",
+        "max": "MAX_GRID_POWER",
         "colors": [
             "#8df900",
             "#ff9300",
@@ -711,8 +712,8 @@
         "title": "Battery Power",
         "label": "Watt",
         "format": "{{value}}",
-        "min": "-4500",
-        "max": "4500",
+        "min": "-MAX_BATTERY_POWER",
+        "max": "MAX_BATTERY_POWER",
         "colors": [
             "#ff2600",
             "#929292",
@@ -740,7 +741,7 @@
         "label": "Watt",
         "format": "{{value}}",
         "min": "0",
-        "max": "7500",
+        "max": "MAX_STRING_POWER",
         "colors": [
             "#fefb00",
             "#ff9300",
@@ -759,7 +760,7 @@
         "type": "mqtt out",
         "z": "febd1a3603ea2145",
         "name": "Battery Reserve Energy",
-        "topic": "e3dc/set/reserve/energy",
+        "topic": "TOPIC_PREFIX/set/reserve/energy",
         "qos": "0",
         "retain": "false",
         "respTopic": "",
@@ -789,7 +790,7 @@
         "topicType": "msg",
         "format": "{{value}} Wh",
         "min": 0,
-        "max": "5000",
+        "max": "MAX_BATTERY_RESERVE",
         "step": "100",
         "className": "",
         "x": 400,
@@ -813,8 +814,8 @@
         "title": "L2",
         "label": "Watt",
         "format": "{{value}}",
-        "min": "-5000",
-        "max": "5000",
+        "min": "-MAX_PHASE_POWER",
+        "max": "MAX_PHASE_POWER",
         "colors": [
             "#8df900",
             "#ff9300",
@@ -841,8 +842,8 @@
         "title": "L3",
         "label": "Watt",
         "format": "{{value}}",
-        "min": "-5000",
-        "max": "5000",
+        "min": "-MAX_PHASE_POWER",
+        "max": "MAX_PHASE_POWER",
         "colors": [
             "#8df900",
             "#ff9300",
@@ -870,7 +871,7 @@
         "label": "Watt",
         "format": "{{value}}",
         "min": "0",
-        "max": "7500",
+        "max": "MAX_STRING_POWER",
         "colors": [
             "#fefb00",
             "#ff9300",
@@ -889,7 +890,7 @@
         "type": "mqtt out",
         "z": "febd1a3603ea2145",
         "name": "Weather Regulation",
-        "topic": "e3dc/set/weather_regulation",
+        "topic": "TOPIC_PREFIX/set/weather_regulation",
         "qos": "0",
         "retain": "false",
         "respTopic": "",
@@ -941,7 +942,7 @@
         "type": "mqtt out",
         "z": "febd1a3603ea2145",
         "name": "Power Limits",
-        "topic": "e3dc/set/power_limits",
+        "topic": "TOPIC_PREFIX/set/power_limits",
         "qos": "0",
         "retain": "false",
         "respTopic": "",
@@ -992,7 +993,7 @@
         "id": "d5da43182f999690",
         "type": "comment",
         "z": "febd1a3603ea2145",
-        "name": "Dashboard v1.0",
+        "name": "Dashboard DASHBOARD_VERSION",
         "info": "https://github.com/pvtom/rscp2mqtt-dashboard",
         "x": 150,
         "y": 40,
@@ -1003,7 +1004,7 @@
         "type": "mqtt out",
         "z": "febd1a3603ea2145",
         "name": "Max Charge Power",
-        "topic": "e3dc/set/max_charge_power",
+        "topic": "TOPIC_PREFIX/set/max_charge_power",
         "qos": "0",
         "retain": "false",
         "respTopic": "",
@@ -1033,7 +1034,7 @@
         "topicType": "msg",
         "format": "{{value}} W",
         "min": "1000",
-        "max": "4500",
+        "max": "MAX_BATTERY_POWER",
         "step": "100",
         "className": "",
         "x": 410,
@@ -1049,7 +1050,7 @@
         "type": "mqtt out",
         "z": "febd1a3603ea2145",
         "name": "Max Discharge Power",
-        "topic": "e3dc/set/max_discharge_power",
+        "topic": "TOPIC_PREFIX/set/max_discharge_power",
         "qos": "0",
         "retain": "false",
         "respTopic": "",
@@ -1079,7 +1080,7 @@
         "topicType": "msg",
         "format": "{{value}} W",
         "min": "1000",
-        "max": "4500",
+        "max": "MAX_BATTERY_POWER",
         "step": "100",
         "className": "",
         "x": 420,
@@ -1219,7 +1220,7 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "4",
+        "onceDelay": "7",
         "topic": "",
         "payload": "1",
         "payloadType": "num",
@@ -1236,7 +1237,7 @@
         "type": "mqtt out",
         "z": "febd1a3603ea2145",
         "name": "",
-        "topic": "e3dc/set/force",
+        "topic": "TOPIC_PREFIX/set/force",
         "qos": "0",
         "retain": "false",
         "respTopic": "",
@@ -1732,7 +1733,7 @@
         "type": "mqtt out",
         "z": "febd1a3603ea2145",
         "name": "Target Charge SOC",
-        "topic": "e3dc/set/limit/charge/soc",
+        "topic": "TOPIC_PREFIX/set/limit/charge/soc",
         "qos": "0",
         "retain": "false",
         "respTopic": "",
@@ -1795,7 +1796,7 @@
         "type": "mqtt out",
         "z": "febd1a3603ea2145",
         "name": "Target Discharge SOC",
-        "topic": "e3dc/set/limit/discharge/soc",
+        "topic": "TOPIC_PREFIX/set/limit/discharge/soc",
         "qos": "0",
         "retain": "false",
         "respTopic": "",
@@ -1841,7 +1842,7 @@
         "type": "mqtt out",
         "z": "febd1a3603ea2145",
         "name": "Target Discharge SOC by Home Power",
-        "topic": "e3dc/set/limit/discharge/by_home_power",
+        "topic": "TOPIC_PREFIX/set/limit/discharge/by_home_power",
         "qos": "0",
         "retain": "false",
         "respTopic": "",
@@ -1871,7 +1872,7 @@
         "topicType": "msg",
         "format": "{{value}} W",
         "min": "4000",
-        "max": "15000",
+        "max": "MAX_HOME_POWER",
         "step": "500",
         "className": "",
         "x": 690,
@@ -1887,7 +1888,7 @@
         "type": "mqtt out",
         "z": "febd1a3603ea2145",
         "name": "Target Charge Limiter Durable",
-        "topic": "e3dc/set/limit/charge/durable",
+        "topic": "TOPIC_PREFIX/set/limit/charge/durable",
         "qos": "0",
         "retain": "false",
         "respTopic": "",
@@ -1939,7 +1940,7 @@
         "type": "mqtt out",
         "z": "febd1a3603ea2145",
         "name": "Target Discharge Limiter Durable",
-        "topic": "e3dc/set/limit/discharge/durable",
+        "topic": "TOPIC_PREFIX/set/limit/discharge/durable",
         "qos": "0",
         "retain": "false",
         "respTopic": "",
@@ -2079,7 +2080,7 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "0.5",
+        "onceDelay": "1",
         "topic": "",
         "payload": "",
         "payloadType": "date",
@@ -2108,7 +2109,7 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "0.5",
+        "onceDelay": "2",
         "topic": "",
         "payload": "",
         "payloadType": "date",
@@ -2251,7 +2252,7 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "2",
+        "onceDelay": "3",
         "topic": "",
         "x": 120,
         "y": 80,
@@ -2280,8 +2281,8 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "3",
-        "topic": "e3dc/#",
+        "onceDelay": "5",
+        "topic": "TOPIC_PREFIX/#",
         "x": 120,
         "y": 120,
         "wires": [
