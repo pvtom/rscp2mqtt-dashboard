@@ -15,7 +15,7 @@
         "port": "MQTT_PORT",
         "clientid": "MQTT_CLIENT_ID",
         "autoConnect": false,
-        "usetls": false,
+        "usetls": MQTT_USETLS,
         "protocolVersion": "4",
         "keepalive": "60",
         "cleansession": true,

@@ -39,6 +39,15 @@ else
     sed -i "s/MQTT_CLIENT_ID/${MQTT_CLIENT_ID}/g" $1
 fi
 
+if [ -z "$MQTT_USETLS" ]
+then
+    echo "MQTT_USETLS: >false<"
+    sed -i "s/MQTT_USETLS/false/g" $1
+else
+    echo "MQTT_USETLS: >${MQTT_USETLS}<"
+    sed -i "s/MQTT_USETLS/${MQTT_USETLS}/g" $1
+fi
+
 if [ -z "$MQTT_USER" ] || [ -z "$MQTT_PASSWORD" ]
 then
     sed -i "s/MQTT_CREDENTIALS//g" $1

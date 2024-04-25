@@ -52,6 +52,7 @@ These parameters are available to configure MQTT settings:
 - MQTT_CLIENT_ID
 - MQTT_USER
 - MQTT_PASSWORD
+- MQTT_USETLS
 - TOPIC_PREFIX
 
 Value ranges can be adjusted with the following parameters:
