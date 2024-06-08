@@ -10,8 +10,6 @@ else
     echo "flow:" $1
 fi
 
-sed -i "s/DASHBOARD_VERSION/v1.0/g" $1
-
 if [ -z "$MQTT_BROKER" ]
 then
     echo "MQTT_BROKER: >localhost<"
@@ -43,9 +41,99 @@ if [ -z "$MQTT_USETLS" ]
 then
     echo "MQTT_USETLS: >false<"
     sed -i "s/MQTT_USETLS/false/g" $1
+    sed -i "s/MQTT_TLS_OBJ//g" $1
+    sed -i "s/DASHBOARD_VERSION/v1.2/g" $1
 else
-    echo "MQTT_USETLS: >${MQTT_USETLS}<"
-    sed -i "s/MQTT_USETLS/${MQTT_USETLS}/g" $1
+    echo "MQTT_USETLS: >true<"
+    sed -i "s/MQTT_USETLS/true/g" $1
+    if [ -z "$MQTT_EMPTY_TLS_OBJ" ]
+    then
+        sed -i "s/MQTT_TLS_OBJ/\"tls\": \"e609b2bcbc41aaaf\",/g" $1
+    else
+        sed -i "s/MQTT_TLS_OBJ/\"tls\": \"\",/g" $1
+    fi
+    sed -i "s/DASHBOARD_VERSION/v1.2(TLS)/g" $1
+fi
+
+if [ -z "$MQTT_TLS_CERTNAME" ]
+then
+    echo "MQTT_TLS_CERTNAME: ><"
+    sed -i "s/MQTT_TLS_CERTNAME//g" $1
+else
+    echo "MQTT_TLS_CERTNAME: >${MQTT_TLS_CERTNAME}<"
+    sed -i "s/MQTT_TLS_CERTNAME/${MQTT_TLS_CERTNAME}/g" $1
+fi
+
+if [ -z "$MQTT_TLS_KEYNAME" ]
+then
+    echo "MQTT_TLS_KEYNAME: ><"
+    sed -i "s/MQTT_TLS_KEYNAME//g" $1
+else
+    echo "MQTT_TLS_KEYNAME: >${MQTT_TLS_KEYNAME}<"
+    sed -i "s/MQTT_TLS_KEYNAME/${MQTT_TLS_KEYNAME}/g" $1
+fi
+
+if [ -z "$MQTT_TLS_CANAME" ]
+then
+    echo "MQTT_TLS_CANAME: ><"
+    sed -i "s/MQTT_TLS_CANAME//g" $1
+else
+    echo "MQTT_TLS_CANAME: >${MQTT_TLS_CANAME}<"
+    sed -i "s/MQTT_TLS_CANAME/${MQTT_TLS_CANAME}/g" $1
+fi
+
+if [ -z "$MQTT_TLS_CERT" ]
+then
+    echo "MQTT_TLS_CERT: ><"
+    sed -i "s/MQTT_TLS_CERT//g" $1
+else
+    echo "MQTT_TLS_CERT: >${MQTT_TLS_CERT}<"
+    sed -i "s/MQTT_TLS_CERT/${MQTT_TLS_CERT}/g" $1
+fi
+
+if [ -z "$MQTT_TLS_KEY" ]
+then
+    echo "MQTT_TLS_KEY: ><"
+    sed -i "s/MQTT_TLS_KEY//g" $1
+else 
+    echo "MQTT_TLS_KEY: >${MQTT_TLS_KEY}<"
+    sed -i "s/MQTT_TLS_KEY/${MQTT_TLS_KEY}/g" $1
+fi
+
+if [ -z "$MQTT_TLS_CA" ]
+then
+    echo "MQTT_TLS_CA: ><"
+    sed -i "s/MQTT_TLS_CA//g" $1
+else
+    echo "MQTT_TLS_CA: >${MQTT_TLS_CA}<"
+    sed -i "s/MQTT_TLS_CA/${MQTT_TLS_CA}/g" $1
+fi
+
+if [ -z "$MQTT_TLS_SERVERNAME" ]
+then
+    echo "MQTT_TLS_SERVERNAME: ><"
+    sed -i "s/MQTT_TLS_SERVERNAME//g" $1
+else
+    echo "MQTT_TLS_SERVERNAME: >${MQTT_TLS_SERVERNAME}<"
+    sed -i "s/MQTT_TLS_SERVERNAME/${MQTT_TLS_SERVERNAME}/g" $1
+fi
+
+if [ -z "$MQTT_TLS_VERIFYSERVERCERT" ]
+then
+    echo "MQTT_TLS_VERIFYSERVERCERT: >false<"
+    sed -i "s/MQTT_TLS_VERIFYSERVERCERT/false/g" $1
+else
+    echo "MQTT_TLS_VERIFYSERVERCERT: >${MQTT_TLS_VERIFYSERVERCERT}<"
+    sed -i "s/MQTT_TLS_VERIFYSERVERCERT/${MQTT_TLS_VERIFYSERVERCERT}/g" $1
+fi
+
+if [ -z "$MQTT_TLS_ALPNPROTOCOL" ]
+then
+    echo "MQTT_TLS_ALPNPROTOCOL: ><"
+    sed -i "s/MQTT_TLS_ALPNPROTOCOL//g" $1
+else
+    echo "MQTT_TLS_ALPNPROTOCOL: >${MQTT_TLS_ALPNPROTOCOL}<"
+    sed -i "s/MQTT_TLS_ALPNPROTOCOL/${MQTT_TLS_ALPNPROTOCOL}/g" $1
 fi
 
 if [ -z "$MQTT_USER" ] || [ -z "$MQTT_PASSWORD" ]
@@ -130,4 +218,10 @@ then
 else
     echo "MAX_BATTERY_RESERVE: >${MAX_BATTERY_RESERVE}<"
     sed -i "s/MAX_BATTERY_RESERVE/${MAX_BATTERY_RESERVE}/g" $1
+fi
+
+if [ -n "$verbose" ]
+then
+    echo "Content of $1"
+    cat $1
 fi

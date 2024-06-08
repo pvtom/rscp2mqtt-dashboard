@@ -17,7 +17,7 @@ Instead of installing the package, you can simply use an existing [Docker image]
 ## Prerequisites
 
 - a running rscp2mqtt instance (https://github.com/pvtom/rscp2mqtt), v3.8 or higher
-- an existing MQTT broker
+- an existing MQTT broker (TLS is supported)
 - an installation of Node-RED (https://nodered.org)
   including the modules "node-red-dashboard" and "node-red-contrib-aggregator" or
 - a Docker environment on your system
@@ -45,7 +45,7 @@ cp -a flows.json.template flows.json
 
 afterwards import flows.json into NODE-RED.
 
-These parameters are available to configure MQTT settings:
+These MQTT parameters are available:
 
 - MQTT_BROKER
 - MQTT_PORT
@@ -53,6 +53,16 @@ These parameters are available to configure MQTT settings:
 - MQTT_USER
 - MQTT_PASSWORD
 - MQTT_USETLS
+- MQTT_EMPTY_TLS_OBJ
+- MQTT_TLS_CERT
+- MQTT_TLS_KEY
+- MQTT_TLS_CA
+- MQTT_TLS_CERTNAME
+- MQTT_TLS_KEYNAME
+- MQTT_TLS_CANAME
+- MQTT_TLS_SERVERNAME
+- MQTT_TLS_VERIFYSERVERCERT
+- MQTT_TLS_ALPNPROTOCOL
 - TOPIC_PREFIX
 
 Value ranges can be adjusted with the following parameters:

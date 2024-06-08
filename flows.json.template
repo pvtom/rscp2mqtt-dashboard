@@ -16,6 +16,7 @@
         "clientid": "MQTT_CLIENT_ID",
         "autoConnect": false,
         "usetls": MQTT_USETLS,
+        MQTT_TLS_OBJ
         "protocolVersion": "4",
         "keepalive": "60",
         "cleansession": true,
@@ -36,6 +37,20 @@
         "userProps": "",
         "sessionExpiry": ""
         MQTT_CREDENTIALS
+    },
+    {
+        "id": "e609b2bcbc41aaaf",
+        "type": "tls-config",
+        "name": "broker_tls",
+        "cert": "/tls/MQTT_TLS_CERT",
+        "key": "/tls/MQTT_TLS_KEY",
+        "ca": "/tls/MQTT_TLS_CA",
+        "certname": "MQTT_TLS_CERTNAME",
+        "keyname": "MQTT_TLS_KEYNAME",
+        "caname": "MQTT_TLS_CANAME",
+        "servername": "MQTT_TLS_SERVERNAME",
+        "verifyservercert": MQTT_TLS_VERIFYSERVERCERT,
+        "alpnprotocol": "MQTT_TLS_ALPNPROTOCOL"
     },
     {
         "id": "b28b0261bc6a5810",
