@@ -1,5 +1,6 @@
 FROM nodered/node-red
 
+RUN rm -rf package-lock.json
 RUN npm install --verbose node-red-contrib-aggregator node-red-dashboard
 
 COPY prepare.sh .
