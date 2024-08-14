@@ -1,6 +1,6 @@
 FROM nodered/node-red
 
-RUN npm install node-red-contrib-aggregator node-red-dashboard
+RUN npm install --verbose node-red-contrib-aggregator node-red-dashboard
 
 COPY prepare.sh .
 COPY settings.js /data/settings.js
