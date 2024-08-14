@@ -1,7 +1,6 @@
 FROM nodered/node-red
 
-RUN rm -rf package-lock.json
-RUN npm install --verbose node-red-contrib-aggregator node-red-dashboard
+RUN npm install --verbose --no-audit node-red-contrib-aggregator node-red-dashboard
 
 COPY prepare.sh .
 COPY settings.js /data/settings.js
