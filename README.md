@@ -74,6 +74,24 @@ Value ranges can be adjusted with the following parameters:
 - MAX_STRING_POWER
 - MAX_PHASE_POWER
 - MAX_BATTERY_RESERVE
+- MAX_WALLBOX_POWER
+
+Wallbox
+
+- WALLBOX (true/false)
+- WALLBOX_NAME
+- WALLBOX_TOPIC
+
+Use these parameters (1 to 8) to set the order in which the UI elements are arranged:
+
+- UI_ORDER_1_PHOTOVOLTAICS
+- UI_ORDER_2_POWER_DIAGRAM
+- UI_ORDER_3_PM
+- UI_ORDER_4_PVI
+- UI_ORDER_5_CHARTS
+- UI_ORDER_6_ANNUAL
+- UI_ORDER_7_SETTINGS
+- UI_ORDER_8_LIMITER
 
 ## Access the dashboard
 

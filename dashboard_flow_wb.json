@@ -603,7 +603,9 @@
             [
                 "fc1ee271de0fcea7"
             ],
-            []
+            [
+                "f7e49fcc14257dca"
+            ]
         ]
     },
     {
@@ -697,7 +699,7 @@
         "name": "",
         "group": "b28b0261bc6a5810",
         "order": 3,
-        "width": "3",
+        "width": "2",
         "height": "3",
         "gtype": "gage",
         "title": "Grid",
@@ -725,7 +727,7 @@
         "name": "",
         "group": "b28b0261bc6a5810",
         "order": 4,
-        "width": "3",
+        "width": "2",
         "height": "3",
         "gtype": "gage",
         "title": "Battery",
@@ -1012,7 +1014,7 @@
         "id": "d5da43182f999690",
         "type": "comment",
         "z": "febd1a3603ea2145",
-        "name": "Dashboard v2.0 ",
+        "name": "Dashboard v2.0 (Wallbox)",
         "info": "https://github.com/pvtom/rscp2mqtt-dashboard",
         "x": 150,
         "y": 40,
@@ -2145,7 +2147,7 @@
         "type": "function",
         "z": "febd1a3603ea2145",
         "name": "Clear & Init Chart",
-        "func": "var topic;\nvar payload;\nvar ui_control;\n\nfor (let i = 0; i < 5; i++) {\n        switch (i) {\n                case 0: topic = null;\n                        payload = []; // clear chart\n                        break;\n                case 1: topic = 'Solar [W]';\n                        payload = 0;\n                        break;\n                case 2: topic = 'Home [W]';\n                        payload = 0;\n                        break;\n                case 3: topic = 'Grid [W]';\n                        payload = 0;\n                        break;\n                case 4: topic = 'Battery [W]';\n                        payload = 0;\n                        break;\n                case 5: topic = 'Wallbox [W]';\n                        payload = 0;\n                        break;\n        }\n\n        ui_control = {\n                \"options\": {\n                        \"elements\": {\n                                \"line\": {\n                                        \"borderWidth\": 1,\n                                        \"fill\": false\n                                },\n                                \"point\": {\n                                        \"radius\": 0\n                                }\n                        }\n                }\n        }\n\n        var newmsg = { payload: payload, topic: topic, ui_control: ui_control };\n        node.send(newmsg);\n}\nreturn;",
+        "func": "var topic;\nvar payload;\nvar ui_control;\n\nfor (let i = 0; i < 6; i++) {\n        switch (i) {\n                case 0: topic = null;\n                        payload = []; // clear chart\n                        break;\n                case 1: topic = 'Solar [W]';\n                        payload = 0;\n                        break;\n                case 2: topic = 'Home [W]';\n                        payload = 0;\n                        break;\n                case 3: topic = 'Grid [W]';\n                        payload = 0;\n                        break;\n                case 4: topic = 'Battery [W]';\n                        payload = 0;\n                        break;\n                case 5: topic = 'Wallbox [W]';\n                        payload = 0;\n                        break;\n        }\n\n        ui_control = {\n                \"options\": {\n                        \"elements\": {\n                                \"line\": {\n                                        \"borderWidth\": 1,\n                                        \"fill\": false\n                                },\n                                \"point\": {\n                                        \"radius\": 0\n                                }\n                        }\n                }\n        }\n\n        var newmsg = { payload: payload, topic: topic, ui_control: ui_control };\n        node.send(newmsg);\n}\nreturn;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -2307,6 +2309,74 @@
         "wires": [
             [
                 "81636072b20ee906"
+            ]
+        ]
+    },
+    {
+        "id": "f89d65b2b46dd9f3",
+        "type": "ui_gauge",
+        "z": "febd1a3603ea2145",
+        "name": "Wallbox Power",
+        "group": "b28b0261bc6a5810",
+        "order": 5,
+        "width": "2",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Wallbox",
+        "label": "Watt",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "11000",
+        "colors": [
+            "#d783ff",
+            "#d783ff",
+            "#d783ff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 400,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "65eef391f78a8e3b",
+        "type": "aggregator",
+        "z": "febd1a3603ea2145",
+        "name": "Aggregate Wallbox",
+        "topic": "Wallbox [W]",
+        "intervalCount": "30",
+        "intervalUnits": "s",
+        "submitIncompleteInterval": true,
+        "submitPerTopic": false,
+        "aggregationType": "max",
+        "x": 590,
+        "y": 160,
+        "wires": [
+            [
+                "36cf667dc6392376"
+            ]
+        ]
+    },
+    {
+        "id": "f7e49fcc14257dca",
+        "type": "range",
+        "z": "febd1a3603ea2145",
+        "minin": "0",
+        "maxin": "24000",
+        "minout": "0",
+        "maxout": "24000",
+        "action": "scale",
+        "round": true,
+        "property": "payload",
+        "name": "float to integer",
+        "x": 140,
+        "y": 980,
+        "wires": [
+            [
+                "f89d65b2b46dd9f3",
+                "65eef391f78a8e3b"
             ]
         ]
     }
