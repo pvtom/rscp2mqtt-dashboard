@@ -14,7 +14,7 @@
         "broker": "MQTT_BROKER",
         "port": "MQTT_PORT",
         "clientid": "MQTT_CLIENT_ID",
-        "autoConnect": false,
+        "autoConnect": true,
         "usetls": MQTT_USETLS,
         MQTT_TLS_OBJ
         "protocolVersion": "4",
@@ -36,7 +36,6 @@
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
-        MQTT_CREDENTIALS
     },
     {
         "id": "e609b2bcbc41aaaf",

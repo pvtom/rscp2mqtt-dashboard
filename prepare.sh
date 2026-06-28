@@ -2,14 +2,6 @@
 
 echo "Configuration"
 
-if [ $# -ne 1 ]
-then
-    echo "flow is missing, exit"
-    exit
-else
-    echo "flow:" $1
-fi
-
 if [ -n "$WALLBOX" ] && $WALLBOX == "true"
 then
     echo "WALLBOX=true"
@@ -78,7 +70,7 @@ then
     echo "MQTT_USETLS: >false<"
     sed -i "s/MQTT_USETLS/false/g" $1
     sed -i "s/MQTT_TLS_OBJ//g" $1
-    sed -i "s/DASHBOARD_VERSION/v2.0/g" $1
+    sed -i "s/DASHBOARD_VERSION/v2.1/g" $1
 else
     echo "MQTT_USETLS: >true<"
     sed -i "s/MQTT_USETLS/true/g" $1
@@ -88,7 +80,7 @@ else
     else
         sed -i "s/MQTT_TLS_OBJ/\"tls\": \"\",/g" $1
     fi
-    sed -i "s/DASHBOARD_VERSION/v2.0(TLS)/g" $1
+    sed -i "s/DASHBOARD_VERSION/v2.1(TLS)/g" $1
 fi
 
 if [ -z "$MQTT_TLS_CERTNAME" ]
@@ -172,16 +164,10 @@ else
     sed -i "s|MQTT_TLS_ALPNPROTOCOL|${MQTT_TLS_ALPNPROTOCOL}|g" $1
 fi
 
-if [ -z "$MQTT_USER" ] || [ -z "$MQTT_PASSWORD" ]
+if [ -n "$MQTT_USER" ] && [ -n "$2" ]
 then
-    sed -i "s/MQTT_CREDENTIALS//g" $1
-else
-    echo "MQTT_USER: >${MQTT_USER}<"
-    echo "MQTT_PASSWORD: >${MQTT_PASSWORD}<"
-    CREDENTIALS=",\"credentials\": {\"user\": \"MQTT_USER\", \"password\": \"MQTT_PASSWORD\"}"
-    sed -i "s|MQTT_CREDENTIALS|${CREDENTIALS}|g" $1
-    sed -i "s|MQTT_USER|${MQTT_USER}|g" $1
-    sed -i "s|MQTT_PASSWORD|${MQTT_PASSWORD}|g" $1
+    echo "MQTT_USER: ${2} activated"
+    mv -f ${2}.unused $2
 fi
 
 if [ -z "$TOPIC_PREFIX" ]
@@ -351,3 +337,5 @@ then
     echo "Content of $1"
     cat $1
 fi
+
+cp $1 $1.back
